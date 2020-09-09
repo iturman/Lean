@@ -236,6 +236,10 @@ namespace QuantConnect.Securities
             {
                 if (symbol.Value == normal || symbol.Value == invert)
                 {
+                    if (!SymbolPropertiesDatabase.FromDataFolder().ContainsKey(symbol.ID.Market, symbol, symbol.SecurityType))
+                    {
+                        continue;
+                    }
                     _invertRealTimePrice = symbol.Value == invert;
                     var securityType = symbol.ID.SecurityType;
 
@@ -288,13 +292,17 @@ namespace QuantConnect.Securities
             SecurityType securityType)
         {
             string market;
-            if (!markets.TryGetValue(securityType, out market) &&
-                !marketMap.TryGetValue(securityType, out market))
+            var marketJoin = new HashSet<string>();
+            if (marketMap.TryGetValue(securityType, out market))
             {
-                return new List<Symbol>();
+                marketJoin.Add(market);
+            }
+            if(markets.TryGetValue(securityType, out market))
+            {
+                marketJoin.Add(market);
             }
 
-            return pairs.Select(ticker => QuantConnect.Symbol.Create(ticker, securityType, market));
+            return pairs.SelectMany(ticker => marketJoin.Select(s => QuantConnect.Symbol.Create(ticker, securityType, s)));
         }
 
         private void OnUpdate()
