@@ -9,7 +9,8 @@
   "environment": "backtesting", // "live-paper", "backtesting", "live-interactive", "live-interactive-iqfeed"
 
   // algorithm class selector
-  "algorithm-type-name": "BasicTemplateFrameworkAlgorithm",
+  //"algorithm-type-name": "BasicTemplateFrameworkAlgorithm",
+  "algorithm-type-name": "MACDTrendAlgorithm",
 
   // Algorithm language selector - options CSharp, FSharp, VisualBasic, Python, Java
   "algorithm-language": "CSharp",
@@ -68,16 +69,16 @@
   "live-data-port": 8020,
 
   // interactive brokers configuration
-  "ib-account": "",
+  "ib-account": "U912833",
   "ib-user-name": "",
   "ib-password": "",
   "ib-host": "127.0.0.1",
-  "ib-port": "4002",
+  "ib-port": "4001",
   "ib-agent-description": "Individual",
-  "ib-tws-dir": "C:\\Jts",
-  "ib-trading-mode": "paper",
+  "ib-tws-dir": "/Users/igor.turman/Jts",
+  "ib-trading-mode": "live",
   "ib-enable-delayed-streaming-data": false,
-  "ib-version": "974",
+  "ib-version": "978",
 
   // tradier configuration
   "tradier-account-id": "",
@@ -100,7 +101,7 @@
   "fxcm-account-id": "",
 
   // iqfeed configuration
-  "iqfeed-host": "127.0.0.1", 
+  "iqfeed-host": "127.0.0.1",
   "iqfeed-username": "",
   "iqfeed-password": "",
   "iqfeed-productName": "",

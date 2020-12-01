@@ -38,8 +38,8 @@ namespace QuantConnect.Algorithm.CSharp
         /// </summary>
         public override void Initialize()
         {
-            SetStartDate(2004, 01, 01);
-            SetEndDate(2015, 01, 01);
+            SetStartDate(2020, 01, 01);
+            SetEndDate(2020, 12, 01);
 
             AddSecurity(SecurityType.Equity, _symbol, Resolution.Daily);
 

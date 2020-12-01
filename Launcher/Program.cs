@@ -23,6 +23,8 @@ using QuantConnect.Lean.Engine;
 using QuantConnect.Logging;
 using QuantConnect.Packets;
 using QuantConnect.Util;
+using QuantConnect.ToolBox.IBDownloader;
+using System.Collections.Generic;
 
 namespace QuantConnect.Lean.Launcher
 {
@@ -43,6 +45,13 @@ namespace QuantConnect.Lean.Launcher
 
         static void Main(string[] args)
         {
+            ////IBDownloader
+            //IBDownloaderProgram.IBDownloader(new List<string> { "SPY" }, "Minute", new DateTime(2020, 1, 1), new DateTime(2020, 12, 1));
+
+            //Console.WriteLine("Downloaded SPY from IB");
+
+            //return;
+
             //Initialize:
             var mode = "RELEASE";
             #if DEBUG

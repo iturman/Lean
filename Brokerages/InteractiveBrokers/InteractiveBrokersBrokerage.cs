@@ -250,12 +250,12 @@ namespace QuantConnect.Brokerages.InteractiveBrokers
             Log.Trace("InteractiveBrokersBrokerage.InteractiveBrokersBrokerage(): Starting IB Automater...");
 
             // start IB Gateway
-            _ibAutomater = new IBAutomater.IBAutomater(ibDirectory, ibVersion, userName, password, tradingMode, port);
-            _ibAutomater.OutputDataReceived += OnIbAutomaterOutputDataReceived;
-            _ibAutomater.ErrorDataReceived += OnIbAutomaterErrorDataReceived;
-            _ibAutomater.Exited += OnIbAutomaterExited;
+            //_ibAutomater = new IBAutomater.IBAutomater(ibDirectory, ibVersion, userName, password, tradingMode, port);
+            //_ibAutomater.OutputDataReceived += OnIbAutomaterOutputDataReceived;
+            //_ibAutomater.ErrorDataReceived += OnIbAutomaterErrorDataReceived;
+            //_ibAutomater.Exited += OnIbAutomaterExited;
 
-            CheckIbAutomaterError(_ibAutomater.Start(false));
+            //CheckIbAutomaterError(_ibAutomater.Start(false));
 
             Log.Trace($"InteractiveBrokersBrokerage.InteractiveBrokersBrokerage(): Host: {host}, Port: {port}, Account: {account}, AgentDescription: {agentDescription}");
 
